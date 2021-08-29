@@ -1,0 +1,27 @@
+<div class="field grid">
+    <label for="kilometersCount" class="col-2 mb-2 md:col-2 md:mb-0">Количество километров</label>
+    <div class="col-12 md:col-10">
+        <input id="kilometersCount" type="text" class="w-full" pInputText [(ngModel)] = "kilometersCount" #form="ngModel" required>
+    </div>
+</div>
+<div class="field grid">
+    <label for="age" class="col-2 mb-2 md:col-2 md:mb-0">Возраст</label>
+    <div class="col-12 md:col-10">
+        <input id="age" type="text" class="w-full" pInputText [(ngModel)] = "age" #form="ngModel" required>
+    </div>
+</div>
+<div class="field grid">
+    <label for="baggageWeight" class="col-2 mb-2 md:col-2 md:mb-0">Вес багажа</label>
+    <div class="col-12 md:col-10">
+        <input id="baggageWeight" type="text" class="w-full" pInputText [(ngModel)] = "baggageWeight" #form="ngModel" required>
+    </div>
+</div>
+<button pButton type="button" label="Найти" class="w-full"  (click) = "calculateTariff()" [disabled] = "form.invalid"></button>
+<div class="cardContainer"> 
+    <app-tariff-card *ngFor = "let cardCompany of cardsCompany"
+                     [cardCompany] = cardCompany>
+    </app-tariff-card>
+    <span class="notFound" *ngIf = "notFound">Нет подходящих билетов</span>
+    
+</div>
+

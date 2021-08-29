@@ -1,0 +1,6 @@
+<p-card header={{cardCompany.name}}>
+    <app-tariff-price *ngFor = "let tariff of cardCompany.tariff" 
+                      [tariff] = tariff>
+    </app-tariff-price>
+    
+</p-card>
