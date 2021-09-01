@@ -60,14 +60,14 @@ export class CalcTariffService {
       }
       
       if (baggageWeight > 15 && baggageWeight <= 50) {
-        this.economPrice += (baggageWeight - 15) * 50;
+        this.economPrice += baggageWeight * 50;
       }
       if (baggageWeight > 50) {
         this.economPrice = 0;
       }
 
       if (baggageWeight > 20 && baggageWeight <= 60) {
-        this.advancedPrice += (baggageWeight - 20) * 50;
+        this.advancedPrice += baggageWeight * 50;
       }
       if (baggageWeight > 60) {
         this.advancedPrice = 0;
